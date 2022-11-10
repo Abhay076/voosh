@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const todoController = require('../app/api/controllers/todos');
-router.get('/', todoController.getAll);
+router.get('/get-order', todoController.getAll);
 router.post('/add-order', todoController.create);
 router.get('/:todoId', todoController.getById);
 router.put('/:todoId', todoController.updateById);
