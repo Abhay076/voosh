@@ -1,4 +1,5 @@
 const express = require("express");
+const PORT = process.env.PORT || 8000;
 const logger = require("morgan");
 const todos = require("./routes/todos");
 const users = require("./routes/users");
@@ -56,6 +57,6 @@ app.use(function (err, req, res, next) {
   if (err.status === 404) res.status(404).json({ message: "Not found" });
   else res.status(500).json({ message: "Something looks wrong :( !!!" });
 });
-app.listen(8000, function () {
-  console.log("Node server listening on port 8000");
+app.listen(PORT, function () {
+  console.log(`Node server running at ${PORT}`);
 });
